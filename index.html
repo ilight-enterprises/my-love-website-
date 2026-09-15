@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Starr ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PAGE 1 — PASSWORD -->
+<section class="love-page active" id="page1">
+
+    <div class="page-content password-page">
+
+        <div class="heart">❤️</div>
+
+        <p class="small-text">
+            THIS IS ONLY FOR ONE SPECIAL GIRL
+        </p>
+
+        <h1>MY STARR</h1>
+
+        <div class="gold-line"></div>
+
+        <p class="password-message">
+            If you're the girl I made this for...
+            you already know the secret. ❤️
+        </p>
+
+        <div class="password-box">
+
+            <input
+                type="password"
+                id="lovePassword"
+                placeholder="Enter the secret password"
+                autocomplete="off"
+            >
+
+            <button
+                class="password-btn"
+                onclick="checkPassword()">
+                OPEN MY HEART 🔐
+            </button>
+
+            <p id="passwordError"></p>
+
+        </div>
+
+        <p class="bottom-text">
+            Made with love, just for you.
+        </p>
+
+    </div>
+
+</section>
+
+
+    <!-- PAGE 2 — ELIZABETH -->
+    <section class="love-page" id="page2">
+
+        <div class="page-content">
+
+            <p class="welcome-label">
+                FOR THE GIRL WHO HAS MY HEART
+            </p>
+
+            <h2>
+                MY STARR,<br>
+                <span>ELIZABETH BRIAN ❤️</span>
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p class="love-message">
+                Starr, there are so many things I love about you,
+                but your personality is one of the things that makes
+                you truly special to me.
+
+                <br><br>
+
+                I love the way you trust me.
+                I love the respect you give me.
+                And most of all, I love the way you love me.
+
+                <br><br>
+
+                You have the kind of qualities that make me look at you
+                and think, <em>"This is the woman I could build a life with."</em>
+
+                <br><br>
+
+                You're not just someone I love.
+                You're someone I genuinely see as a wife,
+                a best friend, a partner, and my Starr. ❤️
+            </p>
+
+            <p class="signature">
+                — Yours, always ❤️
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                NEXT ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 3 — STARR SKY -->
+    <section class="love-page starr-sky" id="page3">
+
+        <div class="stars"></div>
+
+        <div class="page-content starr-content">
+
+            <p class="sky-small">
+                IN A WORLD FULL OF STARS...
+            </p>
+
+            <h2>MY STARR</h2>
+
+            <div class="sky-heart">♥</div>
+
+            <p class="sky-intro">
+                Somehow, among billions of people,
+                I found the one who feels like home.
+            </p>
+
+            <p class="sky-name">
+                Rock Princess
+            </p>
+
+            <div class="sky-line"></div>
+
+            <p class="sky-message">
+                And if I had to choose all over again,
+                I'd still choose you.
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                NEXT ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+  <!-- PAGE 4 — MEMORIES -->
+<section class="love-page" id="page4">
+
+    <div class="page-content">
+
+        <p class="small-text">
+            THE MOMENTS I NEVER WANT TO FORGET
+        </p>
+
+        <h2>OUR MEMORIES 📸</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="section-message">
+            Every picture holds a moment.
+            Every moment holds a feeling.
+            And every feeling reminds me of you.
+        </p>
+
+
+        <!-- PHOTO GALLERY -->
+
+        <div class="memory-gallery">
+
+            <div class="memory-photo"
+                 onclick="openPhoto('images/photo1.jpg')">
+
+                <img src="images/photo1.jpg" alt="Our Memory 1">
+
+            </div>
+
+
+            <div class="memory-photo"
+                 onclick="openPhoto('images/photo2.jpg')">
+
+                <img src="images/photo2.jpg" alt="Our Memory 2">
+
+            </div>
+
+
+            <div class="memory-photo"
+                 onclick="openPhoto('images/photo3.jpg')">
+
+                <img src="images/photo3.jpg" alt="Our Memory 3">
+
+            </div>
+
+
+            <div class="memory-photo"
+                 onclick="openPhoto('images/photo4.jpg')">
+
+                <img src="images/photo4.jpg" alt="Our Memory 4">
+
+            </div>
+
+        </div>
+
+
+        <p class="tap-photo">
+            Tap a photo to see it ❤️
+        </p>
+
+
+        <button class="next-btn" onclick="nextPage()">
+            NEXT ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FULL SCREEN PHOTO VIEWER -->
+
+<div class="photo-viewer" id="photoViewer">
+
+    <button class="close-photo"
+            onclick="closePhoto()">
+        ✕
+    </button>
+
+    <img id="fullPhoto" src="" alt="Memory">
+
+</div>
+
+<!-- PAGE 5 — REASONS -->
+<section class="love-page" id="page5">
+
+    <div class="page-content">
+
+        <p class="small-text">
+            IF YOU EVER WONDER WHY...
+        </p>
+
+        <h2>WHY I LOVE YOU ❤️</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="section-message">
+            Tap each heart, Starr.
+            There's a little something I want you to know.
+        </p>
+
+
+        <!-- REASON 1 -->
+
+        <div class="love-card"
+             onclick="toggleReason(this)">
+
+            <div class="card-top">
+                <span>01</span>
+                <span>❤️</span>
+            </div>
+
+            <h3>Your Personality</h3>
+
+            <p class="hidden-reason">
+                There's something about the person you are
+                that keeps drawing me closer to you.
+                I love the way you carry yourself,
+                the way you think, and simply the woman you are.
+            </p>
+
+        </div>
+
+
+        <!-- REASON 2 -->
+
+        <div class="love-card"
+             onclick="toggleReason(this)">
+
+            <div class="card-top">
+                <span>02</span>
+                <span>❤️</span>
+            </div>
+
+            <h3>Your Trust</h3>
+
+            <p class="hidden-reason">
+                Your trust means more to me than I can explain.
+                Knowing that you believe in me makes me want
+                to become an even better man for you.
+            </p>
+
+        </div>
+
+
+        <!-- REASON 3 -->
+
+        <div class="love-card"
+             onclick="toggleReason(this)">
+
+            <div class="card-top">
+                <span>03</span>
+                <span>❤️</span>
+            </div>
+
+            <h3>Your Respect</h3>
+
+            <p class="hidden-reason">
+                I appreciate the respect you give me.
+                It reminds me that what we have isn't just
+                about love — it's about valuing each other.
+            </p>
+
+        </div>
+
+
+        <!-- REASON 4 -->
+
+        <div class="love-card"
+             onclick="toggleReason(this)">
+
+            <div class="card-top">
+                <span>04</span>
+                <span>❤️</span>
+            </div>
+
+            <h3>The Way You Love Me</h3>
+
+            <p class="hidden-reason">
+                Your love makes me feel seen, appreciated
+                and wanted. I never want to take that love
+                for granted.
+            </p>
+
+        </div>
+
+
+        <!-- REASON 5 -->
+
+        <div class="love-card"
+             onclick="toggleReason(this)">
+
+            <div class="card-top">
+                <span>05</span>
+                <span>❤️</span>
+            </div>
+
+            <h3>Wife Material</h3>
+
+            <p class="hidden-reason">
+                You have so many qualities that make me look
+                at you and think about a future together.
+                You're not just someone I love.
+                You're someone I can genuinely build a life with.
+            </p>
+
+        </div>
+
+
+        <button class="next-btn" onclick="nextPage()">
+            NEXT ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+    <!-- PAGE 6 — FUTURE -->
+<section class="love-page" id="page6">
+
+    <div class="page-content">
+
+        <p class="small-text">
+            THINGS I WANT TO EXPERIENCE WITH YOU
+        </p>
+
+        <h2>OUR FUTURE 💍</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="section-message">
+            I don't know exactly what tomorrow will bring,
+            but there are some things I know I want.
+        </p>
+
+
+        <!-- FUTURE CARD 1 -->
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                🌍
+            </div>
+
+            <div>
+                <h3>Explore The World</h3>
+
+                <p>
+                    New places, new adventures,
+                    and memories we'll laugh about
+                    years from now.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- FUTURE CARD 2 -->
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                😂
+            </div>
+
+            <div>
+                <h3>Keep Laughing Together</h3>
+
+                <p>
+                    Even when life gets difficult,
+                    I want us to always find a reason
+                    to smile together.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- FUTURE CARD 3 -->
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                🏡
+            </div>
+
+            <div>
+                <h3>Build A Home</h3>
+
+                <p>
+                    Not just a house,
+                    but a place filled with peace,
+                    laughter, love and us.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FUTURE CARD 4 -->
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                🤝
+            </div>
+
+            <div>
+                <h3>Grow Together</h3>
+
+                <p>
+                    I want to watch you grow,
+                    grow with you,
+                    and support each other through
+                    every chapter.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FUTURE CARD 5 -->
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                ♾️
+            </div>
+
+            <div>
+                <h3>Choose Each Other</h3>
+
+                <p>
+                    Through the good days,
+                    the difficult days,
+                    and everything in between.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button class="next-btn" onclick="nextPage()">
+            ONE LAST THING ❤️
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- PAGE 7 — FINAL -->
+<section class="love-page final-page" id="page7">
+
+    <div class="page-content">
+
+        <!-- QUESTION -->
+
+        <div id="finalQuestion">
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <p class="small-text">
+                STARR, I HAVE ONE QUESTION...
+            </p>
+
+            <h2>
+                WILL YOU KEEP<br>
+                CHOOSING ME?
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p class="final-question-text">
+                Not just on the easy days,
+                but on the ordinary days,
+                the difficult days,
+                and every day in between.
+            </p>
+
+
+            <div class="answer-buttons">
+
+                <button
+                    class="yes-btn"
+                    onclick="showFinalMessage()">
+                    YES ❤️
+                </button>
+
+                <button
+                    class="maybe-btn"
+                    onclick="playfulAnswer()">
+                    LET ME THINK 😏
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FINAL MESSAGE -->
+
+        <div id="finalMessage">
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <p class="small-text">
+                THEN THIS IS FOR YOU...
+            </p>
+
+            <h2>
+                MY STARR
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p class="final-message">
+
+                Elizabeth,
+
+                <br><br>
+
+                I don't know if I'll ever find enough words
+                to explain what you mean to me.
+
+                <br><br>
+
+                I love your personality.
+                I love your heart.
+                I love the trust you give me.
+                I love the respect you show me.
+                And I love the way you love me.
+
+                <br><br>
+
+                You have qualities that make me see
+                more than just a girlfriend in you.
+
+                <br><br>
+
+                I see my best friend.
+                My partner.
+                My future.
+                My Starr.
+
+                <br><br>
+
+                And whatever life brings our way,
+                I hope we keep choosing each other.
+
+                <br><br>
+
+                Because if I had to start all over again...
+
+                <br>
+
+                <strong>
+                    I'd still choose you. ❤️
+                </strong>
+
+            </p>
+
+
+            <div class="forever">
+                YOU. ME. ALWAYS. ♾️
+            </div>
+
+            <p class="signature">
+                With all my heart ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BACKGROUND MUSIC -->
+
+<audio id="loveMusic" loop>
+    <source src="music/lifes-a-mess.m4a" type="audio/mp4">
+</audio>
+
+
+<!-- MUSIC CONTROL -->
+
+<button
+    id="musicControl"
+    class="music-control"
+    onclick="toggleMusic()">
+    🎵
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+  

@@ -1,0 +1,1131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #050505;
+    color: white;
+}
+
+
+/* =========================
+   EVERY PAGE
+========================= */
+
+.love-page {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #350914 0%,
+            #120308 40%,
+            #050505 78%
+        );
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.04);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s;
+}
+
+
+.love-page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+.page-content {
+    width: 100%;
+    max-width: 700px;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 25px 5px 80px;
+
+    scrollbar-width: none;
+}
+
+.page-content::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small-text {
+    color: #d6a354;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.love-page h1 {
+    font-size: clamp(40px, 11vw, 75px);
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.love-page h2 {
+    font-size: clamp(34px, 9vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.love-page h2 span {
+    color: #d6a354;
+}
+
+.opening-message {
+    color: #ddd;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+    font-size: 70px;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.15);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.next-btn {
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    border: 1px solid #d6a354;
+    border-radius: 40px;
+
+    background: transparent;
+    color: #d6a354;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+}
+
+.next-btn:hover,
+.next-btn:active {
+    background: #d6a354;
+    color: #050505;
+
+    box-shadow:
+        0 0 25px rgba(214, 163, 84, 0.45);
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+#page1::before,
+#page1::after {
+    content: "♥";
+
+    position: absolute;
+
+    color: rgba(255, 0, 70, 0.1);
+
+    font-size: 180px;
+
+    animation: floatHeart 6s infinite ease-in-out;
+}
+
+#page1::before {
+    left: -60px;
+    top: 10%;
+}
+
+#page1::after {
+    right: -60px;
+    bottom: 10%;
+    animation-delay: 2s;
+}
+
+@keyframes floatHeart {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(10deg);
+    }
+}
+
+.bottom-text {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    width: 100%;
+
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   PAGE 2
+========================= */
+
+.welcome-label {
+    color: #d6a354;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.gold-line {
+    width: 70px;
+    height: 1px;
+
+    background: #d6a354;
+
+    margin: 22px auto;
+}
+
+.love-message {
+    color: #ddd;
+    font-size: 16px;
+    line-height: 1.85;
+    max-width: 600px;
+    margin: auto;
+}
+
+.signature {
+    color: #d6a354;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+
+/* =========================
+   STARR SKY
+========================= */
+
+.starr-sky {
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #190914 0%,
+            #08040c 45%,
+            #010103 100%
+        );
+}
+
+.starr-sky::before {
+    content:
+        "✦   ·     ✧       ·   ✦     ·       ✧   ·     ✦";
+
+    position: absolute;
+
+    top: 10%;
+    left: 0;
+
+    width: 100%;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 18px;
+    letter-spacing: 15px;
+
+    animation: starsMove 5s infinite alternate ease-in-out;
+}
+
+.starr-sky::after {
+    content:
+        "·     ✦       ·   ✧     ·   ✦   ·     ✧";
+
+    position: absolute;
+
+    bottom: 10%;
+    left: 0;
+
+    width: 100%;
+
+    color: rgba(214, 163, 84, 0.6);
+
+    font-size: 14px;
+    letter-spacing: 12px;
+
+    animation: starsMove 7s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes starsMove {
+
+    from {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-15px);
+    }
+}
+
+.starr-content {
+    position: relative;
+    z-index: 2;
+}
+
+.sky-small {
+    color: #d6a354;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.starr-content h2 {
+    font-size: clamp(55px, 15vw, 110px);
+    letter-spacing: 7px;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.3),
+        0 0 35px rgba(214,163,84,0.25);
+}
+
+.sky-heart {
+    color: #d6a354;
+    font-size: 35px;
+    margin: 12px 0;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.sky-intro {
+    color: #bbb;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: auto;
+}
+
+.sky-name {
+    color: #d6a354;
+    font-size: 24px;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+.sky-line {
+    width: 60px;
+    height: 1px;
+    background: #d6a354;
+    margin: 22px auto;
+}
+
+.sky-message {
+    color: #eee;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.section-message {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 550px;
+    margin: auto;
+}
+
+.memory-placeholder {
+    width: 180px;
+    height: 180px;
+
+    margin: 30px auto 10px;
+
+    border: 1px solid #5c461f;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #777;
+}
+
+.memory-placeholder span {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.memory-placeholder p {
+    font-size: 12px;
+}
+
+
+/* =========================
+   REASONS
+========================= */
+
+.reason-card {
+    max-width: 500px;
+
+    margin: 12px auto;
+
+    padding: 15px 20px;
+
+    border-left: 2px solid #d6a354;
+
+    background: rgba(255,255,255,0.035);
+
+    display: flex;
+    align-items: center;
+
+    text-align: left;
+}
+
+.reason-card span {
+    color: #d6a354;
+    font-size: 12px;
+
+    width: 40px;
+}
+
+.reason-card p {
+    color: #eee;
+    font-size: 16px;
+}
+
+
+/* =========================
+   FUTURE
+========================= */
+
+.future-message {
+    max-width: 580px;
+
+    margin: auto;
+
+    color: #ddd;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================
+   FINAL PAGE
+========================= */
+
+.final-page {
+    background:
+        radial-gradient(
+            circle at center,
+            #3b0915 0%,
+            #100308 42%,
+            #030303 80%
+        );
+}
+
+.final-heart {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.final-message {
+    color: #ddd;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    max-width: 570px;
+
+    margin: auto;
+}
+
+.forever {
+    color: #d6a354;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+
+    margin-top: 30px;
+}
+/* =========================
+   MEMORY GALLERY
+========================= */
+
+.memory-gallery {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 25px auto 10px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.memory-photo {
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    border: 1px solid #5c461f;
+
+    background: #080808;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+
+.memory-photo:hover {
+    transform: scale(1.03);
+
+    border-color: #d6a354;
+
+    box-shadow:
+        0 0 20px rgba(214, 163, 84, 0.25);
+}
+
+
+.memory-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+
+.memory-photo:hover img {
+    transform: scale(1.08);
+}
+
+
+.tap-photo {
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================
+   FULL SCREEN PHOTO VIEWER
+========================= */
+
+.photo-viewer {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.96);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.4s;
+}
+
+
+.photo-viewer.show {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.photo-viewer img {
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    border: 1px solid #d6a354;
+
+    box-shadow:
+        0 0 30px rgba(214, 163, 84, 0.25);
+}
+
+
+.close-photo {
+    position: absolute;
+
+    top: 20px;
+
+    right: 20px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: 1px solid #d6a354;
+
+    border-radius: 50%;
+
+    background: #080808;
+
+    color: #d6a354;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+/* =========================
+   LOVE CARDS
+========================= */
+
+.love-card {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 12px auto;
+
+    padding: 18px 20px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(214, 163, 84, 0.25);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.love-card:hover {
+    border-color: #d6a354;
+
+    transform: translateY(-2px);
+
+    background: rgba(214, 163, 84, 0.06);
+}
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #d6a354;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.love-card h3 {
+    color: #fff;
+
+    font-size: 18px;
+
+    font-weight: normal;
+}
+
+.hidden-reason {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    color: #bbb;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-top: 0;
+
+    transition:
+        max-height 0.6s ease,
+        opacity 0.5s ease,
+        margin-top 0.5s ease;
+}
+
+
+/* OPEN CARD */
+
+.love-card.open {
+    border-color: #d6a354;
+
+    background: rgba(214, 163, 84, 0.07);
+}
+
+.love-card.open .hidden-reason {
+    max-height: 300px;
+
+    opacity: 1;
+
+    margin-top: 15px;
+}
+/* =========================
+   FUTURE CARDS
+========================= */
+
+.future-card {
+    width: 100%;
+    max-width: 550px;
+
+    margin: 13px auto;
+
+    padding: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    text-align: left;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(214, 163, 84, 0.22);
+
+    transition: 0.4s;
+}
+
+.future-card:hover {
+    border-color: #d6a354;
+
+    transform: translateX(4px);
+}
+
+.future-icon {
+    min-width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #5c461f;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+}
+
+.future-card h3 {
+    color: #d6a354;
+
+    font-size: 17px;
+
+    font-weight: normal;
+
+    margin-bottom: 6px;
+}
+
+.future-card p {
+    color: #aaa;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+/* =========================
+   FINAL QUESTION
+========================= */
+
+.final-question-text {
+    color: #ccc;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    max-width: 520px;
+
+    margin: auto;
+}
+
+
+.answer-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+
+.answer-buttons button {
+    padding: 14px 25px;
+
+    border-radius: 40px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.yes-btn {
+    border: 1px solid #d6a354;
+
+    background: #d6a354;
+
+    color: #050505;
+}
+
+
+.yes-btn:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(214, 163, 84, 0.5);
+}
+
+
+.maybe-btn {
+    border: 1px solid #555;
+
+    background: transparent;
+
+    color: #aaa;
+}
+
+
+.maybe-btn:hover {
+    border-color: #d6a354;
+
+    color: #d6a354;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+#finalMessage {
+    display: none;
+
+    animation: finalReveal 1.2s ease;
+}
+
+
+@keyframes finalReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+.final-message {
+    color: #ddd;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    max-width: 580px;
+
+    margin: auto;
+}
+
+
+.final-message strong {
+    display: inline-block;
+
+    color: #d6a354;
+
+    font-size: 23px;
+
+    margin-top: 10px;
+}
+
+
+.forever {
+    color: #d6a354;
+
+    font-size: 19px;
+
+    letter-spacing: 3px;
+
+    margin-top: 30px;
+}
+
+
+.final-heart {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+/* =========================
+   PASSWORD SCREEN
+========================= */
+
+.password-page {
+    max-width: 600px;
+}
+
+.password-message {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 450px;
+    margin: 0 auto 25px;
+}
+
+.password-box {
+    width: 100%;
+    max-width: 380px;
+    margin: auto;
+}
+
+.password-box input {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid #5c461f;
+
+    color: white;
+
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    outline: none;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.password-box input:focus {
+    border-color: #d6a354;
+
+    box-shadow:
+        0 0 20px rgba(214, 163, 84, 0.2);
+}
+
+.password-box input::placeholder {
+    color: #777;
+}
+
+.password-btn {
+    margin-top: 15px;
+
+    padding: 15px 28px;
+
+    border: 1px solid #d6a354;
+
+    border-radius: 40px;
+
+    background: #d6a354;
+
+    color: #050505;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+}
+
+.password-btn:hover,
+.password-btn:active {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(214, 163, 84, 0.45);
+}
+
+#passwordError {
+    min-height: 22px;
+
+    margin-top: 15px;
+
+    color: #d66;
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+/* =========================
+   MUSIC CONTROL
+========================= */
+
+.music-control {
+    position: fixed;
+
+    bottom: 22px;
+    right: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d6a354;
+
+    background: rgba(5, 5, 5, 0.85);
+
+    color: #d6a354;
+
+    font-size: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    box-shadow:
+        0 0 15px rgba(214, 163, 84, 0.2);
+
+    transition: 0.3s;
+}
+
+.music-control:hover,
+.music-control:active {
+    transform: scale(1.1);
+
+    background: #d6a354;
+
+    color: #050505;
+
+    box-shadow:
+        0 0 25px rgba(214, 163, 84, 0.45);
+}
